@@ -709,6 +709,13 @@ module.exports['Content-Length'] = {
       test.equal(0, data, 'should set content-length');
       test.done();
     });
+  },
+
+  'GET content length': function (test) {
+    rest.get(host).on('complete', function(data) {
+      test.equal(0, data, 'should be zero content-length');
+      test.done();
+    });
   }
 
 };
